@@ -6,6 +6,7 @@ class Berita extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->model('m_kategori');
         $this->load->model('m_berita');
 
         $this->navbar = "partials/navbar";
@@ -25,10 +26,12 @@ class Berita extends CI_Controller {
 
     public function add()
     {
-        $data['title'] = "Admin - Kategori";
+        $data['title'] = "Admin - Berita";
         $data['navbar'] = "partials/navbar";
-        $data['content'] = 'pages/kategori/add';
+        $data['content'] = 'pages/berita/add';
         $data['footer'] = "partials/footer";
+
+        $data['data_kategori'] = $this->m_kategori->select_all();
 
         $this->load->view('layouts/main', $data);
     }
@@ -36,29 +39,34 @@ class Berita extends CI_Controller {
     public function detail($id)
     {
         $id = $this->uri->segment(2);
-        $data['title'] = "Admin - Kategori Detail";
+        $data['title'] = "Admin - Berita Detail";
         $data['navbar'] = "partials/navbar";
-        $data['content'] = 'pages/kategori/detail';
+        $data['content'] = 'pages/berita/detail';
         $data['footer'] = "partials/footer";
 
-        $data['data'] = $this->m_kategori->select_first_by_id($id);
+        $data['data'] = $this->m_berita->select_by_id($id);
+        $data['data_kategori'] = $this->m_kategori->select_all();
         $this->load->view('layouts/main', $data);
     }
 
     public function update()
     {
-        $this->db->set('nama_kategori', $this->input->post('nama_kategori'));
-        $this->db->set('nama_kategori_seo', $this->input->post('nama_kategori_seo'));
+        $this->db->set('kategori_id', $this->input->post('kategori_id'));
+        $this->db->set('judul', $this->input->post('judul_berita'));
+        $this->db->set('isi', $this->input->post('isi_berita'));
+        $this->db->set('gambar', $this->input->post('gambar_berita'));
         $this->db->where('id', $this->input->post('id'));
-        $this->db->update('berita_kategori');
-        redirect('kategori');
+        $this->db->update('berita');
+        redirect('berita');
     }
 
     public function simpan()
     {
-        $this->db->set('nama_kategori', $this->input->post('nama_kategori'));
-        $this->db->set('nama_kategori_seo', $this->input->post('nama_kategori_seo'));
-        $this->db->insert('berita_kategori');
-        redirect('kategori');
+        $this->db->set('kategori_id', $this->input->post('kategori_id'));
+        $this->db->set('judul', $this->input->post('judul_berita'));
+        $this->db->set('isi', $this->input->post('isi_berita'));
+        $this->db->set('gambar', $this->input->post('gambar_berita'));
+        $this->db->insert('berita');
+        redirect('berita');
     }
 }

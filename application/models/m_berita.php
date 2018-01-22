@@ -25,8 +25,8 @@ class M_Berita extends CI_Model{
         $this->db->select('berita.*, berita_kategori.nama_kategori');
         $this->db->from('berita');
         $this->db->join('berita_kategori', 'berita_kategori.id = berita.kategori_id');
-        $this->db->where('berita_kategori.kategori_id', $id);
-        $query = $this->db->get();
+        $this->db->where('berita.id', $id);
+        $query = $this->db->get()->row();
         return $query;
     }
 

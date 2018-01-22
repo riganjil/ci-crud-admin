@@ -20,7 +20,6 @@
                     <th>ID</th>
                     <th>Nama Kategori</th>
                     <th>Judul Berita</th>
-                    <th>Judul Berita SEO</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -30,7 +29,6 @@
                     <th>ID</th>
                     <th>Nama Kategori</th>
                     <th>Judul Berita</th>
-                    <th>Judul Berita SEO</th>
                     <th></th>
                     <th></th>
                 </tr>
