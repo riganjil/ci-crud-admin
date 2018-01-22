@@ -16,6 +16,8 @@ class Kategori extends CI_Controller {
         $data['navbar'] = "partials/navbar";
         $data['content'] = 'pages/kategori/index';
         $data['footer'] = "partials/footer";
+
+        $data['data'] = "partials/footer";
         $this->load->view('layouts/main', $data);
     }
 }
