@@ -56,3 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'auth/login';
 
 $route['kategori'] = 'kategori/index';
+$route['kategori/add'] = 'kategori/add';
+$route['kategori/update']['post'] = 'kategori/update';
+$route['kategori/simpan']['post'] = 'kategori/simpan';
+$route['kategori/(:any)'] = 'kategori/detail/$id';

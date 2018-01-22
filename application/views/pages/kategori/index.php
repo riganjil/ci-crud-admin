@@ -6,7 +6,7 @@
     <li class="breadcrumb-item active">Kategori</li>
 </ol>
 <div class="mb-3">
-    <button class="btn btn-primary btn-sm">Tambah Data</button>
+    <a href="<?php echo base_url('kategori/add') ?>" class="btn btn-primary btn-sm">Tambah Data</a>
 </div>
 <div class="card mb-3">
     <div class="card-header">
