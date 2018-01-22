@@ -1,6 +1,13 @@
 <?php
 
-class M_Category extends CI_Model{
+class M_Kategori extends CI_Model{
+
+    function select_all(){
+        $this->db->select('*');
+        $this->db->from('berita_kategori');
+        $query = $this->db->get();
+        return $query;
+    }
 
     function select_by_kategori_id($id){
         $this->db->select('berita.*, berita_kategori.nama_kategori');

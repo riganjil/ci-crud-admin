@@ -6,6 +6,8 @@ class Kategori extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->model('m_kategori');
+
         $this->navbar = "partials/navbar";
         $this->footer = "partials/footer";
     }
@@ -17,7 +19,7 @@ class Kategori extends CI_Controller {
         $data['content'] = 'pages/kategori/index';
         $data['footer'] = "partials/footer";
 
-        $data['data'] = "partials/footer";
+        $data['data'] = $this->m_kategori->select_all();
         $this->load->view('layouts/main', $data);
     }
 }

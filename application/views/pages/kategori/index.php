@@ -34,20 +34,15 @@
                 </tr>
                 </tfoot>
                 <tbody>
+                <?php foreach($data->result_array() as $row){ ?>
                 <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td><a href="">edit</a></td>
-                    <td><a href="">hapus</a></td>
+                    <td><?php echo $row['id'] ?></td>
+                    <td><?php echo $row['nama_kategori'] ?></td>
+                    <td><?php echo $row['nama_kategori_seo'] ?></td>
+                    <td><a href="<?php echo base_url('kategori/'.$row['id']) ?>">edit</a></td>
+                    <td><a href="<?php echo base_url('kategori/'.$row['id'].'/hapus') ?>">hapus</a></td>
                 </tr>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                </tr>
+                <?php } ?>
                 </tbody>
             </table>
         </div>
