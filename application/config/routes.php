@@ -60,3 +60,9 @@ $route['kategori/add'] = 'kategori/add';
 $route['kategori/update']['post'] = 'kategori/update';
 $route['kategori/simpan']['post'] = 'kategori/simpan';
 $route['kategori/(:any)'] = 'kategori/detail/$id';
+
+$route['berita'] = 'berita/index';
+$route['berita/add'] = 'berita/add';
+$route['berita/update']['post'] = 'berita/update';
+$route['berita/simpan']['post'] = 'berita/simpan';
+$route['berita/(:any)'] = 'berita/detail/$id';
